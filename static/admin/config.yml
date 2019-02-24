@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: yamatsum/nigolog
+  branch: master
+
+publish_mode: editorial_workflow
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: posts
+    label: Post
+    folder: "src/pages/posts"
+    create: true
+    extension: "md"
+    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: Title }
+      - { name: date, label: Date, widget: date }
+      - { label: "Tags", name: "tags", widget: "list" }
+      # - { label: "Publish", name: "publish", widget: "boolean", default: false }
+      # - { label: "Table of Contents", name: "toc", widget: "boolean", default: false }
+      - { name: body, label: Body, widget: markdown }
