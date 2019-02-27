@@ -43,6 +43,9 @@ const globalStyle = createGlobalStyle`
   }
   a {
     color: ${props => props.theme.colors.highlight};
+    :focus{
+      outline: none;
+    }
   }
   ol, ul, li {
     list-style: none;
@@ -63,9 +66,7 @@ const globalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   img {
-    display: block;
-  	width: 100%;
-  	height: auto;
+    max-width: 100%;
   }
   button,
   input {

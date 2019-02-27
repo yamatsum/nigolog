@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `ニゴログ`,
     author: `yamatsum`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `技術ブログ`,
     siteUrl: `https://nigolog.netlify.com`,
     social: {
       twitter: `tomato_mus`,
