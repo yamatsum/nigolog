@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import CategoryMenu from "../components/CategoryMenu";
 import PostCard from "../components/PostCard";
 import styled from "styled-components";
 import svgHeadingBar from "../svg/svg.svg";
@@ -9,30 +10,31 @@ import svgHeadingBar from "../svg/svg.svg";
 const Heading = styled.h1`
 position: relative;
   margin: 0.5em 0 .8em;
-  padding-left: 20px;
+  // padding-left: 20px;
   font-size: 32px;
   color: #fff;
   font-weight: 600;
   line-height: 44px;
   letter-spacing: 1px;
-  &:before {
-    position: absolute;
-    top: 2px;
-    left: 0;
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 40px;
-    background-image: url("${svgHeadingBar}");
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
+  // &:before {
+  //   position: absolute;
+  //   top: 2px;
+  //   left: 0;
+  //   content: "";
+  //   display: inline-block;
+  //   width: 10px;
+  //   height: 40px;
+  //   background-image: url("${svgHeadingBar}");
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  // }
 `;
 
 class CategoryTemplate extends React.Component {
   render() {
     const { data, pageContext } = this.props;
     const posts = data.allMarkdownRemark.edges;
+    const { location } = this.props;
     // get Category name from category slug
     const catSlug = pageContext.category;
     const catObject = data.site.siteMetadata.categories.find(cat => {
@@ -44,6 +46,7 @@ class CategoryTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={catName}>
         <SEO title={catName} />
+        <CategoryMenu location={location} />
         <Heading>{catName}</Heading>
         {posts.map(({ node }) => {
           return <PostCard key={node.fields.slug} node={node} />;
@@ -76,7 +79,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YYYY/MM/DD")
+            date(formatString: "YYYY.MM.DD")
             title
             emoji
             category

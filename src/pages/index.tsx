@@ -3,16 +3,19 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PostCard from "../components/PostCard";
+import CategoryMenu from "../components/CategoryMenu";
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
     const posts = data.allMarkdownRemark.edges;
+    const { location } = this.props;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="" />
+        <CategoryMenu location={location} />
         {posts.map(({ node }) => {
           return <PostCard key={node.fields.slug} node={node} />;
         })}
@@ -37,7 +40,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YYYY/MM/DD")
+            date(formatString: "YYYY.MM.DD")
             title
             description
             emoji
