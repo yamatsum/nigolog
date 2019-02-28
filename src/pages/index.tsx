@@ -1,10 +1,8 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
-
-import Bio from "../components/bio";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import ContentWrapper from "../components/ContentWrapper";
+import PostCard from "../components/PostCard";
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,29 +12,11 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <ContentWrapper>
-          <Bio />
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug;
-            return (
-              <div key={node.fields.slug}>
-                <h3 style={{}}>
-                  <Link to={node.fields.slug}>{title}</Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.excerpt,
-                  }}
-                />
-              </div>
-            );
-          })}
-        </ContentWrapper>
+        <SEO title="" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        <h2>NEW POSTS</h2>
+        {posts.map(({ node }) => {
+          return <PostCard key={node.fields.slug} node={node} />;
+        })}
       </Layout>
     );
   }
@@ -54,14 +34,15 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY/MM/DD")
             title
             description
+            emoji
+            category
           }
         }
       }
