@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import PostCard from "../components/PostCard";
 import styled from "styled-components";
-import svgHeadingBar from "../svg/others/heading-bar.svg";
+import svgHeadingBar from "../svg/svg.svg";
 
 const Heading = styled.h1`
 position: relative;
@@ -80,6 +80,7 @@ export const pageQuery = graphql`
             title
             emoji
             category
+            color
           }
         }
       }

@@ -39,7 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       createPage({
         path: post.node.fields.slug,
-        component: path.resolve(`./src/templates/post.js`),
+        component: path.resolve(`./src/templates/post.tsx`),
         context: {
           slug: post.node.fields.slug,
           previous,
@@ -60,7 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
     categories.forEach(category => {
       createPage({
         path: `/category/${category}/`,
-        component: path.resolve("src/templates/categories.js"),
+        component: path.resolve("src/templates/categories.tsx"),
         context: {
           category
         }

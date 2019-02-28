@@ -10,7 +10,8 @@ module.exports = {
     categories: [
       {
         name: "デザイン",
-        slug: "design"
+        slug: "design",
+        color: "#0c9ee4"
       }
     ]
   },
