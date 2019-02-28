@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import twemoji from "twemoji"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -19,6 +20,14 @@ class BlogPostTemplate extends React.Component {
         />
         <h1>{post.frontmatter.title}</h1>
         <p>{post.frontmatter.date}</p>
+        <p
+          dangerouslySetInnerHTML=({
+            __html: twemoji.parse(post.frontmatter.emoji, {
+              folder: "svg",
+              ext: ".svg"
+            })
+          })
+        />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <Bio />
 
@@ -61,6 +70,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        emoji
       }
     }
   }
