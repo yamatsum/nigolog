@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import twemoji from "twemoji";
@@ -29,7 +28,6 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Bio />
 
         <ul>
           <li>

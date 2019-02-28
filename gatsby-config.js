@@ -7,6 +7,12 @@ module.exports = {
     social: {
       twitter: `tomato_mus`,
     },
+    categories: [
+      {
+        name: "デザイン",
+        slug: "design"
+      }
+    ]
   },
   plugins: [
     {

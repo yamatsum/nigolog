@@ -10,7 +10,7 @@ import svgIdea from "../svg/svg.svg";
 const Nav = styled.nav`
   display: block;
   margin: 0;
-  padding: 0;
+  padding: 0 0 2pm;
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     padding: 1em 0;
   }
@@ -119,7 +119,7 @@ const CategoryMenu = ({ location }) => {
         <CategoryLink
           catName="Design"
           catIcon={svgDesign}
-          catLink="/a"
+          catLink="/category/desing"
           path={path}
         />
         <CategoryLink catName="Dev" catIcon={svgDev} catLink="/a" path={path} />
