@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Helmet from "react-helmet";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PostCard from "../components/PostCard";
@@ -16,6 +17,9 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="" />
+        <Helmet>
+          <link rel="canonical" href="https://catnose.work" />
+        </Helmet>
         <HomeJsonLd />
         <CategoryMenu location={location} />
         {posts.map(({ node }) => {

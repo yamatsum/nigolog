@@ -36,9 +36,16 @@ module.exports = {
         plugins: [
           `gatsby-remark-code-titles`,
           {
+            resolve: "gatsby-remark-embed-youtube",
+            options: {
+              width: 650,
+              height: 365
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 700,
             },
           },
           {
@@ -111,6 +118,19 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: "UA-134661352-1"
+    //   }
+    // },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`
+      }
+    },
+    `gatsby-plugin-twitter`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     // {
