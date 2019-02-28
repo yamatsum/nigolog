@@ -68,7 +68,7 @@ const BioLinks = styled.div`
   }
 `;
 
-function Bio() {
+const Bio = () => {
   return (
     <StaticQuery
       query={bioQuery}
@@ -114,7 +114,7 @@ function Bio() {
       }}
     />
   );
-}
+};
 
 const bioQuery = graphql`
   query BioQuery {
