@@ -7,6 +7,7 @@ import twemoji from "twemoji";
 import styled from "styled-components";
 import postSyntaxHighlightStyle from "../styles/postSyntaxHighlight";
 import postContentStyle from "../styles/postContent";
+import postCustomBlock from "../styles/postCustomBlock";
 import svgPattern from "../svg/svg.svg";
 import CategoryLabel from "../components/CategoryLabel";
 
@@ -14,6 +15,10 @@ const Content = styled.section`
   position: relative;
   background: #fff;
   overflow: hidden;
+  font-size: 17px;
+  @media screen and (max-width: ${props => props.theme.responsive.medium}) {
+    font-size: 15.5px;
+  }
   &:before,
   &:after {
     content: "";
@@ -69,8 +74,11 @@ const ContentMain = styled.div`
 
 const PostTitle = styled.h1`
   margin: 0.1em 0 0.3em;
-  font-size: 1.9em;
+  font-size: 1.8em;
   font-weight: 600;
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    font-size: 25px;
+  }
   line-height: 1.5;
 `;
 
@@ -84,6 +92,7 @@ const PostDate = styled.time`
 const PostContent = styled.div`
   ${postSyntaxHighlightStyle}
   ${postContentStyle}
+  ${postCustomBlock}
 `;
 
 class BlogPostTemplate extends React.Component {

@@ -34,6 +34,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-code-titles`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -56,6 +57,10 @@ module.exports = {
             resolve: "gatsby-remark-custom-blocks",
             options: {
               blocks: {
+                simple: {
+                  classes: "simple",
+                  title: "optional"
+                },
                 info: {
                   classes: "info",
                   title: "optional"
