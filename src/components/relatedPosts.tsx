@@ -2,10 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import twemoji from "twemoji";
-import CategoryLabel from "../components/CategoryLabel";
 
 const Wrapper = styled.div`
-  margin: 2em 0 0;
   background: ${props => props.theme.colors.whitesmoke};
   padding: 2em ${props => props.theme.sideSpace.contentLarge};
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
@@ -24,6 +22,9 @@ const PostCardWrapper = styled.div`
     &:hover {
       background: #e0ebf1;
     }
+    @media screen and (max-width: ${props => props.theme.responsive.small}) {
+      padding: 10px;
+    }
   }
 `;
 const PostCardEmoji = styled.p`
@@ -31,9 +32,9 @@ const PostCardEmoji = styled.p`
   align-items: center;
   justify-content: center;
   margin: 0;
-  width: 90px;
-  height: 90px;
-  background: ${props => props.theme.colors.blackLight};
+  width: 80px;
+  height: 80px;
+  background: ${props => props.theme.colors.whitesmoke};
   border-radius: 4px;
   font-size: 50px;
   img {
@@ -54,7 +55,14 @@ const PostCardContent = styled.div`
     margin-bottom: 0.1em;
     letter-spacing: 0.05em;
     font-size: 0.8em;
-    color: ${props => props.theme.colors.gray};
+    color: ${props => props.theme.colors.silver};
+  }
+  @media screen and (max-width: ${props => props.theme.responsive.small}) {
+    padding-left: 15px;
+    width: calc(100% - 80px);
+    h5 {
+      font-size: 1.1em;
+    }
   }
 `;
 
@@ -62,7 +70,7 @@ const RelatedPostCard = ({ node }) => {
   const title = node.frontmatter.title || node.fields.slug;
   const emoji = twemoji.parse(node.frontmatter.emoji || "🐱", {
     folder: "svg",
-    ext: ".svg"
+    ext: ".svg",
   });
 
   return (
@@ -72,7 +80,6 @@ const RelatedPostCard = ({ node }) => {
         <PostCardContent>
           <h5>{title}</h5>
           <time>{node.frontmatter.date}</time>
-          <CategoryLabel slug={node.frontmatter.category} />
         </PostCardContent>
       </Link>
     </PostCardWrapper>

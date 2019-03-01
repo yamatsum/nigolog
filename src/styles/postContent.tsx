@@ -3,7 +3,7 @@ import svgHeadingBar from "../svg/svg.svg";
 import svgHeadingIcon from "../svg/svg.svg";
 
 const postContentStyle = css`
-  margin: 1em 0;
+  margin: 1.5em 0 1em;
   line-height: 1.9;
   a:hover {
     text-decoration: underline;
