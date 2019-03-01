@@ -1,8 +1,8 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
 import styled from "styled-components";
 
+import svgAvatar from "../svg/svg.svg";
 import svgTwitter from "../svg/svg.svg";
 import svgResume from "../svg/svg.svg";
 import svgEmail from "../svg/svg.svg";
@@ -24,10 +24,15 @@ const BioWrapper = styled.div`
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     padding: 1.3em 1em;
   }
-  .avatar {
-    border-radius: 50%;
-  }
 `;
+
+const AvatarImage = styled.img`
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+`;
+
 const BioHeader = styled.div`
   display: flex;
   align-items: center;
@@ -46,6 +51,7 @@ const BioMain = styled.div`
 `;
 const BioText = styled.p`
   color: #fff;
+  font-size: 0.92em;
 `;
 const BioLinks = styled.div`
   margin-top: 1.5em;
@@ -53,23 +59,24 @@ const BioLinks = styled.div`
   color: #fff;
   text-align: center;
   max-width: 244px;
-  .bio-link {
-    width: 33.3%;
-    display: block;
-    font-weight: 600;
-    font-size: 0.9em;
-    line-height: 30px;
-    color: ${props => props.theme.colors.gray};
-    letter-spacing: 0.5px;
-    &:hover {
-      color: ${props => props.theme.colors.highlight};
-    }
-  }
   img {
     display: block;
     margin: 0 auto;
     width: 40px;
     height: 33px;
+  }
+`;
+
+const BioLink = styled.a`
+  width: 33.3%;
+  display: block;
+  font-weight: 600;
+  font-size: 0.9em;
+  line-height: 30px;
+  color: ${props => props.theme.colors.gray};
+  letter-spacing: 0.5px;
+  &:hover {
+    color: ${props => props.theme.colors.highlight};
   }
 `;
 
@@ -82,36 +89,31 @@ const Bio = () => {
         return (
           <BioWrapper>
             <BioHeader>
-              <Image
-                fixed={data.avatar.childImageSharp.fixed}
-                alt={author}
-                className="avatar"
-              />
+              <AvatarImage src={svgAvatar} alt={author} />
               <BioName>
-                <a href={`https://twitter.com/${social.twitter}`}>CatNose</a>
+                <a href={`https://twitter.com/${social.twitter}`}>{author}</a>
               </BioName>
             </BioHeader>
             <BioMain>
               <BioText>
-                Independent UI/UX designer / front-end developer who loves
-                crafting web apps.
+                ?????????/????????????/????????????Web?????Web???????????????RESUME???????
               </BioText>
               <BioLinks>
-                <a className="bio-link" href="https://www.resume.id/catnose99">
+                <BioLink href="https://www.resume.id/catnose99">
                   <img src={svgResume} alt="RESUME" />
                   <div>RESUME</div>
-                </a>
-                <a
-                  className="bio-link bio-link--email"
+                </BioLink>
+                <BioLink
+                  className="bio-link--email"
                   href="mailto:catnose99@gmail.com"
                 >
                   <img src={svgEmail} alt="" />
                   <div>E-mail</div>
-                </a>
-                <a className="bio-link" href="https://twitter.com/catnose99">
+                </BioLink>
+                <BioLink href="https://twitter.com/catnose99">
                   <img src={svgTwitter} alt="Twitter" />
                   <div>Twitter</div>
-                </a>
+                </BioLink>
               </BioLinks>
             </BioMain>
           </BioWrapper>

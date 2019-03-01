@@ -10,12 +10,13 @@ const SEO = ({ description, lang, meta, title }) => {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description;
+        const defaultTitle = "blog";
         return (
           <Helmet
             htmlAttributes={{
               lang,
             }}
-            defaultTitle="title"
+            defaultTitle={defaultTitle}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
@@ -49,11 +50,15 @@ const SEO = ({ description, lang, meta, title }) => {
               },
               {
                 name: `twitter:title`,
-                content: title,
+                content: title || defaultTitle,
               },
               {
                 name: `twitter:description`,
                 content: metaDescription,
+              },
+              {
+                name: `google-site-verification`,
+                content: ``,
               },
             ].concat(meta)}
           />

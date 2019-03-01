@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import ContentWrapper from "../components/ContentWrapper";
 
+const FooterContent = styled.footer`
+  padding: 0.1em 0;
+`;
+
 const FooterInner = styled.footer`
   margin-top: 3em;
   text-align: center;
@@ -17,7 +21,7 @@ const FooterInner = styled.footer`
 
 const Footer = () => {
   return (
-    <footer>
+    <FooterContent>
       <ContentWrapper>
         <FooterInner>
           <div>
@@ -28,7 +32,7 @@ const Footer = () => {
           <div>© {new Date().getFullYear()}, CatNose All rights reserved.</div>
         </FooterInner>
       </ContentWrapper>
-    </footer>
+    </FooterContent>
   );
 };
 
