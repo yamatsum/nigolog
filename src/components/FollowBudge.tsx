@@ -3,6 +3,7 @@ import styled from "styled-components";
 import svgTwitterWhite from "../svg/svg.svg";
 
 const Follow = styled.div`
+  margin-top: 2em;
   text-align: left;
 `;
 
