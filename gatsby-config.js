@@ -46,6 +46,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 700,
+              linkImagesToOriginal: false
             },
           },
           {
@@ -79,6 +80,12 @@ module.exports = {
                 notice: {
                   classes: "notice",
                   title: "optional"
+                },
+                imageSmall: {
+                  classes: "image-small"
+                },
+                imageMedium: {
+                  classes: "image-medium"
                 }
               }
             }
