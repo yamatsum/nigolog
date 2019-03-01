@@ -26,7 +26,6 @@ const globalStyle = createGlobalStyle`
     vertical-align: baseline;
     -webkit-tap-highlight-color:rgba(0,0,0,0);
   }
-  /* Added to Fix Footer to bottom of viewport */
   html, body {
     height: 100%;
   }
@@ -46,6 +45,7 @@ const globalStyle = createGlobalStyle`
   }
   a {
     color: ${props => props.theme.colors.highlight};
+    text-decoration: none;
     transition: .2s;
     :focus{
       outline: none;
@@ -70,7 +70,7 @@ const globalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   img {
-    max-width: 100%;
+  	max-width: 100%;
   }
   button,
   input {

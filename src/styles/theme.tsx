@@ -5,7 +5,7 @@ const variables = {
     blackLight: "#313746",
     gray: "#727d86",
     silver: "#969fa7",
-    whitesmoke: "f1f4f7",
+    whitesmoke: "#f1f4f7",
     highlight: "#20a8ea",
     red: "#f7615f",
     orange: "#ffa22b",

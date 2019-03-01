@@ -10,7 +10,7 @@ import svgIdea from "../svg/svg.svg";
 const Nav = styled.nav`
   display: block;
   margin: 0;
-  padding: 0 0 2pm;
+  padding: 0 0 2em;
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     padding: 1em 0;
   }
@@ -64,7 +64,7 @@ const CategoryItem = styled.li`
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: $(props => props.theme.colors.gray);
+    color: ${props => props.theme.colors.gray};
     @media screen and (max-width: ${props => props.theme.responsive.small}) {
       font-size: 12px;
     }
@@ -118,20 +118,13 @@ const CategoryMenu = ({ location }) => {
         <CategoryLink
           catName="Design"
           catIcon={svgDesign}
-          catLink="/category/desing"
-          path={path}
-        />
-        <CategoryLink catName="Dev" catIcon={svgDev} catLink="/a" path={path} />
-        <CategoryLink
-          catName="Idea"
-          catIcon={svgIdea}
-          catLink="/a"
+          catLink="/category/design"
           path={path}
         />
         <CategoryLink
-          catName="Collect"
-          catIcon={svgCollection}
-          catLink="/my-second-post/"
+          catName="Dev"
+          catIcon={svgDev}
+          catLink="/category/dev"
           path={path}
         />
       </CategoryItemList>
