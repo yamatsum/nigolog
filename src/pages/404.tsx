@@ -49,7 +49,7 @@ class NotFoundPage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <Wrapper>
-          <SEO title="???????????" />
+          <SEO title="title" />
           <HeroImage src={svg404} />
           <Title>Not Found</Title>
           <StyledLink to={`/`} className="cat-item__link">
@@ -64,7 +64,7 @@ class NotFoundPage extends React.Component {
 export default NotFoundPage;
 
 export const pageQuery = graphql`
-  query NotFoundQuery {
+  query {
     site {
       siteMetadata {
         title
