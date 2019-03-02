@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import SEO from "../components/Seo";
 import CategoryMenu from "../components/CategoryMenu";
 import CategoryJsonLd from "../components/json/CategoryJsonLd";
 import PostCard from "../components/PostCard";

@@ -4,8 +4,8 @@ import Helmet from "react-helmet";
 import twemoji from "twemoji";
 import styled from "styled-components";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../components/Layout";
+import SEO from "../components/Seo";
 import CategoryLabel from "../components/CategoryLabel";
 import PostJsonLd from "../components/json/PostJsonLd";
 import RelatedPosts from "../components/RelatedPosts";
