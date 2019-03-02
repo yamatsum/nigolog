@@ -6,7 +6,7 @@
   "author": "yamatsum <sy12250@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.1.17",
+    "gatsby": "^2.1.19",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-feed": "^2.0.13",
     "gatsby-plugin-google-analytics": "^2.0.14",

@@ -44,7 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
     categories.forEach(category => {
       createPage({
         path: `/category/${category}/`,
-        component: path.resolve("src/templates/categories.tsx"),
+        component: path.resolve("./src/templates/categories.tsx"),
         context: {
           category
         }
