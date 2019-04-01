@@ -1,5 +1,6 @@
 ---
 title: ブログをはじめました
+description: this is first post
 date: "2019-04-01"
 category: "react"
 color: "red"
