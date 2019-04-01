@@ -11,7 +11,17 @@ module.exports = {
       {
         name: "デザイン",
         slug: "design",
-        color: "#0c9ee4"
+        color: "#20a8ea"
+      },
+      {
+        name: "React",
+        slug: "react",
+        color: "#61DBFB"
+      },
+      {
+        name: "Typescript",
+        slug: "ts",
+        color: "#61DBFB"
       }
     ]
   },

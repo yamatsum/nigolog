@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import ContentWrapper from "../components/ContentWrapper";
-import svgLogo from "../svg/svg.svg";
+import svgLogo from "../svg/256g.svg";
 
 const HeaderTag = styled.header`
   width: 100%;
   padding: 16px 0;
   // border-bottom: solid 1px ${props => props.theme.colors.blackLight};
-  box-shadow: 0 2px 4px rgba(0,0,0,.4);
+  box-shadow: 0px 3px 25px rgba(77,77,99,0.1);
 `;
 
 const HeaderInner = styled.div`
@@ -19,8 +19,8 @@ const HeaderInner = styled.div`
   }
   .logo {
     display: block;
-    width: 165px;
-    height: 37px;
+    width: 124px;
+    height: 40px;
     @media screen and (max-width: ${props => props.theme.responsive.small}) {
       margin: 0 auto;
     }

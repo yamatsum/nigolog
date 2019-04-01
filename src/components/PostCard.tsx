@@ -10,6 +10,7 @@ const PostCardWrapper = styled.div`
     align-items: start;
     padding: 1.4em 0;
     color: #fff;
+    border-radius: 4px;
     border-top: solid 1px ${props => props.theme.colors.blackLight};
     &:hover {
       background: ${props => props.theme.colors.blackLight};
@@ -49,6 +50,7 @@ const PostCardContent = styled.div`
     font-size: 1.5em;
     font-weight: 600;
     line-height: 1.4;
+    color: ${props => props.theme.colors.gray};
   }
   time {
     display: block;

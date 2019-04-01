@@ -25,14 +25,6 @@ const Content = styled.section`
   @media screen and (max-width: ${props => props.theme.responsive.medium}) {
     font-size: 15.5px;
   }
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    z-index: 5;
-  }
   &:before {
     top: 0;
     left: 0;
@@ -61,6 +53,7 @@ const HeroImage = styled.p`
   background-image: url("${svgPattern}");
   background-repeat: repeat;
   background-size: 400px;
+  border-radius: 4px 4px 0 0;
   min-height: 230px;
   display: flex;
   align-items: center;
@@ -93,7 +86,7 @@ const PostTitle = styled.h1`
 
 const PostDate = styled.time`
   display: block;
-  color: ${props => props.theme.colors.silver};
+  color: ${props => props.theme.colors.gray};
   font-size: 0.9em;
   letter-spacing: 0.05em;
 `;
@@ -117,7 +110,7 @@ class BlogPostTemplate extends React.Component {
         <Helmet>
           <link
             rel="canonical"
-            href={`https://catnose.work${this.props.location.pathname}`}
+            href={`https://nigolog.netlify.com${this.props.location.pathname}`}
           />
         </Helmet>
         <PostJsonLd
@@ -128,14 +121,14 @@ class BlogPostTemplate extends React.Component {
           categorySlug={category}
         />
         <Content>
-          <HeroImage
-            dangerouslySetInnerHTML={{
-              __html: twemoji.parse(emoji || "??", {
-                folder: "svg",
-                ext: ".svg",
-              }),
-            }}
-          />
+          {/* <HeroImage */}
+          {/*   dangerouslySetInnerHTML={{ */}
+          {/*     __html: twemoji.parse(emoji || "??", { */}
+          {/*       folder: "svg", */}
+          {/*       ext: ".svg", */}
+          {/*     }), */}
+          {/*   }} */}
+          {/* /> */}
           <ContentMain>
             <PostDate>{date}</PostDate>
             <PostTitle>{title}</PostTitle>

@@ -1,11 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import svgNew from "../svg/svg.svg";
-import svgDesign from "../svg/svg.svg";
-import svgDev from "../svg/svg.svg";
-import svgCollection from "../svg/svg.svg";
-import svgIdea from "../svg/svg.svg";
+import svgNew from "../svg/new.svg";
+import svgVim from "../svg/vim.svg";
 
 const Nav = styled.nav`
   display: block;
@@ -116,15 +113,9 @@ const CategoryMenu = ({ location }) => {
       <CategoryItemList>
         <CategoryLink catName="New" catIcon={svgNew} catLink="/" path={path} />
         <CategoryLink
-          catName="Design"
-          catIcon={svgDesign}
-          catLink="/category/design"
-          path={path}
-        />
-        <CategoryLink
-          catName="Dev"
-          catIcon={svgDev}
-          catLink="/category/dev"
+          catName="Vim"
+          catIcon={svgVim}
+          catLink="/category/vim"
           path={path}
         />
       </CategoryItemList>

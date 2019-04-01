@@ -3,7 +3,7 @@ import { css } from "styled-components";
 const postCustomBlockStyle = css`
   .custom-block {
     margin: 1em 0;
-    background: ${props => props.theme.colors.whitesmoke};
+    background: ${props => props.theme.colors.background};
   }
   .custom-block-heading {
     font-weight: 600;

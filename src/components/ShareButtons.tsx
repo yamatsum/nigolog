@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import svgTwitterWhite from "../svg/svg.svg";
+import svgTwitterWhite from "../svg/twitter.svg";
 
 const Wrapper = styled.div`
   margin: 0 0 2.5em;
   padding: 0 ${props => props.theme.sideSpace.contentLarge};
   text-align: center;
-  color: ${props => props.theme.colors.blackLight};
+  color: ${props => props.theme.colors.gray};
   @media screen and (max-width: ${props => props.theme.responsive.small}) {
     padding: 0 ${props => props.theme.sideSpace.contentSmall};
   }
@@ -30,7 +30,7 @@ const ShareLink = styled.a`
   line-height: 40px;
   border-radius: 50%;
   color: #fff;
-  background: ${props => props.theme.colors.blackLight};
+  background: ${props => props.theme.colors.gray};
   font-weight: 600;
   vertical-align: middle;
   &:hover {
@@ -41,20 +41,18 @@ const GitHubLink = styled.a`
   display: inline-block;
   margin-top: 1em;
   font-size: 0.85em;
-  color: ${props => props.theme.colors.silver};
+  color: ${props => props.theme.colors.gray};
 `;
 
 const ShareButtons = ({ slug, title, emoji }) => {
-  const encodedTitle = encodeURIComponent(
-    `${emoji || "??"}${title} | CatKnows`
-  );
-  const pageUrl = `https://catnose.work${slug}`;
+  const encodedTitle = encodeURIComponent(`${emoji || "??"}${title} | nigolog`);
+  const pageUrl = `https://nigolog.netlify.com${slug}`;
   return (
     <Wrapper>
       <ShareTitle>SHARE</ShareTitle>
       <ShareLinks>
         <ShareLink
-          href={`https://twitter.com/share?url=${pageUrl}&text=${encodedTitle}&via=catnose99`}
+          href={`https://twitter.com/share?url=${pageUrl}&text=${encodedTitle}&via=tomato_mus`}
           rel="nofllow"
         >
           <img
@@ -83,7 +81,7 @@ const ShareButtons = ({ slug, title, emoji }) => {
         </ShareLink>
       </ShareLinks>
       <GitHubLink
-        href={`https://github.com/catnose99/CatKnows/edit/master/content/blog${slug}index.md`}
+        href={`https://github.com/yamatsum/nigolog/edit/master/content/blog${slug}index.md`}
         rel="nofllow"
       >
         Edit on GitHub

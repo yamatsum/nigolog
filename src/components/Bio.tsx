@@ -2,10 +2,10 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
-import svgAvatar from "../svg/svg.svg";
-import svgTwitter from "../svg/svg.svg";
-import svgResume from "../svg/svg.svg";
-import svgEmail from "../svg/svg.svg";
+import svgAvatar from "../../content/assets/avatar.png";
+import svgTwitter from "../svg/social-1_logo-twitter.svg";
+import svgRss from "../svg/social-1_logo-rss.svg";
+import svgGithub from "../svg/social-1_logo-github.svg";
 
 const BioWrapper = styled.div`
   position: sticky;
@@ -15,7 +15,7 @@ const BioWrapper = styled.div`
   font-size: 15.5px;
   background: ${props => props.theme.colors.blackLight};
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   @media screen and (max-width: ${props => props.theme.responsive.large}) {
     position: relative;
     margin: 2em 0;
@@ -43,20 +43,20 @@ const BioName = styled.div`
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 1.3em;
-    color: #fff;
+    color: ${props => props.theme.colors.gray};
   }
 `;
 const BioMain = styled.div`
   margin-top: 1em;
 `;
 const BioText = styled.p`
-  color: #fff;
+  color: ${props => props.theme.colors.gray};
   font-size: 0.92em;
 `;
 const BioLinks = styled.div`
   margin-top: 1.5em;
   display: flex;
-  color: #fff;
+  color: ${props => props.theme.colors.gray};
   text-align: center;
   max-width: 244px;
   img {
@@ -96,21 +96,19 @@ const Bio = () => {
             </BioHeader>
             <BioMain>
               <BioText>
-                ?????????/????????????/????????????Web?????Web???????????????RESUME???????
+                ポータルサイトを運営するWeb企業で働くDevOpsエンジニア。
+                最近はクロスプラットフォームアプリやフロントエンドに興味があります。
               </BioText>
               <BioLinks>
-                <BioLink href="https://www.resume.id/catnose99">
-                  <img src={svgResume} alt="RESUME" />
-                  <div>RESUME</div>
+                <BioLink href="https://www.resume.id/">
+                  <img src={svgRss} alt="RSS" />
+                  <div>RSS</div>
                 </BioLink>
-                <BioLink
-                  className="bio-link--email"
-                  href="mailto:catnose99@gmail.com"
-                >
-                  <img src={svgEmail} alt="" />
-                  <div>E-mail</div>
+                <BioLink href="https://github.com/yamatsum">
+                  <img src={svgGithub} alt="" />
+                  <div>Github</div>
                 </BioLink>
-                <BioLink href="https://twitter.com/catnose99">
+                <BioLink href={`https://twitter.com/${social.twitter}`}>
                   <img src={svgTwitter} alt="Twitter" />
                   <div>Twitter</div>
                 </BioLink>

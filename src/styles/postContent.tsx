@@ -140,7 +140,7 @@ const postContentStyle = css`
       }
     }
     td {
-      background-color:  ${props => props.theme.colors.whitesmoke};
+      background-color:  ${props => props.theme.colors.background};
       color: ${props => props.theme.colors.blackLight};
       padding: 10px 12px;
     }

@@ -21,7 +21,7 @@ class BlogIndex extends React.Component {
         {/*   <link rel="canonical" href="https://catnose.work" /> */}
         {/* </Helmet> */}
         <HomeJsonLd />
-        <CategoryMenu location={location} />
+        {/* <CategoryMenu location={location} /> */}
         {posts.map(({ node }) => {
           return <PostCard key={node.fields.slug} node={node} />;
         })}
