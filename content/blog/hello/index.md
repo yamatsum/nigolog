@@ -1,5 +1,5 @@
 ---
-title: ブログをはじめました
+title: ブログはじめました
 description: this is first post
 date: "2019-04-01"
 category: "react"

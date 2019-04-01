@@ -100,7 +100,7 @@ const Bio = () => {
                 最近はクロスプラットフォームアプリやフロントエンドに興味があります。
               </BioText>
               <BioLinks>
-                <BioLink href="https://www.resume.id/">
+                <BioLink href={`${data.site.siteMetadata.siteUrl}/rss.xml`}>
                   <img src={svgRss} alt="RSS" />
                   <div>RSS</div>
                 </BioLink>
@@ -136,6 +136,7 @@ const bioQuery = graphql`
         social {
           twitter
         }
+        siteUrl
       }
     }
   }
